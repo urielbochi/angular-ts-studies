@@ -1,0 +1,31 @@
+<form class="form">
+    <input name="name" type="text" placeholder="Course" [(ngModel)]="course.courseName">
+    <input name="value" type="number" placeholder="Value" [(ngModel)]="course.courseValue">
+    <input name="area" type="text" placeholder="Area" [(ngModel)]="course.courseArea">
+    <input (click)="register()" class="reg__button" *ngIf="id < 0" type="button" placeholder="Register" value="Register">
+    <input *ngIf="id >= 0" class="reg__button" type="button" (click)="editAction()" placeholder="Edit" value="Edit">
+</form>
+
+<table class="table">
+    <tr>
+        <td>Course</td>
+        <td>Value</td>
+        <td>Area</td>
+        <td>Actions</td>
+    </tr>
+    <tr *ngFor="let course of courseVector; let index = index">
+        <td>
+            {{course.courseName}}
+        </td>
+        <td>
+            {{course.courseValue}}
+        </td>
+        <td>
+            {{course.courseArea}}
+        </td>
+        <td>
+            <button class="action__button" (click)="edit(index)">Editar</button>
+            <button class="action__button delete" (click)="remove(index)">Excluir</button>
+        </td>
+    </tr>
+</table>

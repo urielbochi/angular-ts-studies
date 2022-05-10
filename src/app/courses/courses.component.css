@@ -1,0 +1,38 @@
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    width: 800px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(216, 216, 210);
+}
+
+input {
+    border-radius: 5px;
+    border: solid black 1px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.reg__button {
+    background-color: rgb(52, 6, 58);
+    color: rgb(225, 225, 225);
+}
+
+.action__button {
+    background-color: rgb(126, 195, 206);
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.delete {
+    background-color: rgb(87, 11, 8);
+    color: rgb(218, 202, 202);
+
+}
