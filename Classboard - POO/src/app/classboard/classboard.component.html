@@ -1,0 +1,60 @@
+<h1 class="main__title">Angular Classboard</h1>
+<form class="form">
+  <input
+    name="name"
+    type="text"
+    placeholder="Student"
+    [(ngModel)]="teacherInput.studentName"
+  />
+  <input
+    name="firstExamResult"
+    type="number"
+    placeholder="AV1 Result"
+    [(ngModel)]="teacherInput.firstExam"
+  />
+  <input
+    name="secondExamResult"
+    type="text"
+    placeholder="AV2 Result"
+    [(ngModel)]="teacherInput.secondExam"
+  />
+  <input
+    *ngIf="id < 0"
+    (click)="addNewStudent()"
+    class="reg__button"
+    type="button"
+    placeholder="Register"
+    value="Register"
+  />
+  <input
+    *ngIf="id >= 0"
+    (click)="editStudentAction()"
+    class="reg__button"
+    type="button"
+    placeholder="Edit"
+    value="Edit"
+  />
+</form>
+
+<table class="table">
+  <tr class="td__weight">
+    <td>Student</td>
+    <td>AV1</td>
+    <td>AV2</td>
+    <td>Average</td>
+    <td>Status</td>
+    <td>Actions</td>
+  </tr>
+  <tr *ngFor="let student of allStudentData; let id = index">
+    <td>{{ student.studentName }}</td>
+    <td>{{ student.firstExam }}</td>
+    <td>{{ student.secondExam }}</td>
+    <td>{{(student.firstExam ++ student.secondExam) / 2}}</td>
+    <td *ngIf="(student.firstExam ++ student.secondExam) / 2 >= 7">Aproved</td>
+    <td *ngIf="(student.firstExam ++ student.secondExam) / 2 < 7">Failed</td>
+    <td>
+        <button class="action__button" (click)="editStudent(id)">Edit</button>
+      <button class="action__button delete" (click)="removeStudent(id)">Delete</button>
+    </td>
+  </tr>
+</table>
