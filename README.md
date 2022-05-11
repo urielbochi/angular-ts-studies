@@ -1,8 +1,1 @@
-# 📜Repositório de estudos | Angular | Typescript | POO
-
-
-
-## Aplicações feitas utilizando Angular
-
-- Classboard
-- Simple CRUD Course
+https://urielbochi.github.io/angular-ts-studies/Classboard%20-%20POO
